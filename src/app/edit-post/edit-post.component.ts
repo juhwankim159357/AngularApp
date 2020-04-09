@@ -35,8 +35,9 @@ export class EditPostComponent implements OnInit {
 
   formSubmit(f : NgForm){
     
-    this.blogPosts.tags = this.tags.split(",").map(tag => tag.trim());
-   
+    if(this.blogPosts.tags){
+      this.blogPosts.tags = this.tags.split(",").map(tag => tag.trim()); 
+    }
     
     
     this.postService.updatePostById(this.blogPosts._id, this.blogPosts).subscribe(data =>{
