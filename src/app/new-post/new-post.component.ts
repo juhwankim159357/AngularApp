@@ -21,9 +21,9 @@ export class NewPostComponent implements OnInit {
   }
 
   formSubmit(f : NgForm){
-    if(this.blogPost.tags){
+    
       this.blogPost.tags = this.tags.split(",").map(tag => tag.trim()); 
-    }
+    
     this.blogPost.isPrivate = false;
     this.blogPost.postDate = new Date().toLocaleDateString();
     this.blogPost.postedBy = "WEB422 Student";
